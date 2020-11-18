@@ -7,7 +7,7 @@ ENV NXLOG_VERSION=2.10.2150
 ENV NXLOG_PKG=nxlog-ce_${NXLOG_VERSION}_ubuntu_bionic_amd64.deb
 
 RUN apt-get update \
-    && apt-get install -y wget \
+    && apt-get install -y wget libnet-ldap-perl perl \
     && wget https://nxlog.co/system/files/products/files/348/${NXLOG_PKG} \
     && apt-get install -y ./${NXLOG_PKG} \
     && rm ${NXLOG_PKG} 
